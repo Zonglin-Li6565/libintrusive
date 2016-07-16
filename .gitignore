@@ -47,4 +47,6 @@ autom4te.cache*
 *libtool*
 *ltmain.sh
 *.deps*
-.libs
+*.libs*
+*Makefile*
+
