@@ -49,4 +49,5 @@ autom4te.cache*
 *.deps*
 *.libs*
 *Makefile*
-
+*configure
+*.tar.gz
