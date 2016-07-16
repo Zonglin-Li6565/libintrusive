@@ -31,3 +31,18 @@
 # Debug files
 *.dSYM/
 *.su
+
+# My project specific
+aclocal.m4
+autom4te.cache*
+compile
+config.guess
+config.*
+depcomp
+*m4/*
+missing
+stamp-h1
+test.sh
+install-sh
+libtool
+ltmain.sh
