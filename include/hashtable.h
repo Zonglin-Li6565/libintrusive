@@ -5,11 +5,14 @@
 #ifndef _HASHTABLE_H
 #define _HASHTABLE_H
 
+#define SEPERATE_CHAINING 0
+#define PROBING           1
+
 #include <stdint.h>
 
 /**
  * The hashtable node structure
- */ 
+ */
 typedef struct hashtable_node
 {
     void *key;
@@ -79,6 +82,22 @@ typedef struct hashtable
      */
     void (*deleteall) (struct hashtable *self);
 } hashtable_t;
+
+/**
+ * initialize_table
+ *   DESCRIPTION: Initialize a new hash table with the specified size
+ *                and mode.
+ *   INPUTS: table ------ The pointer to the new table structure
+ *           init_size -- The initial size of the table
+ *           mode ------- The mode of the table. Either seperate chaining or probing. 
+ *                        Use the macro above.
+ *           hash ------- The hash function to use.
+ *   RETURN VALUE: none
+ *   SIDE EFFECTS: Will use allocator to allocate a new block of memory 
+ *   NOTE: All the parameters are required
+ *   AUTHOR: Zonglin Li
+ */
+void initialize_table(hashtable_t *table, uint32_t init_size, int mode, uint32_t (*hash) (void *key, int size));
 
 #endif  /* _HASHTABLE_H */
 
